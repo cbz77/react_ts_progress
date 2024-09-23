@@ -1,4 +1,5 @@
 import './App.css';
+import PaintCanvas from './components/paint/PaintCanvas';
 import ProgressTest from './components/progress/Progress';
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
       <ProgressTest></ProgressTest>
 
       <div className='divider'></div>
+
+      <PaintCanvas></PaintCanvas>
 
     </div>
   );
