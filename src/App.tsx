@@ -1,4 +1,5 @@
 import './App.css';
+import InvoiceApp from './components/invoice/InvoiceApp.';
 import PaintCanvas from './components/paint/PaintCanvas';
 import ProgressTest from './components/progress/Progress';
 
@@ -10,6 +11,16 @@ function App() {
       <header className='text-center mb-4'>
         <h1 className='text-4xl text-bold'>Test Typescript</h1>
       </header>
+
+      <div className='collapse bg-base-200'>
+        <input type='checkbox'></input>
+        <div className='collapse-title text-xl font-medium'>Faktury</div>
+        <div className='collapse-content'>
+          <InvoiceApp></InvoiceApp>
+        </div>
+      </div>
+
+      <div className='divider'></div>
 
       <div className='collapse bg-base-200'>
         <input type='checkbox'></input>
