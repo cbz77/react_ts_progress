@@ -9,7 +9,7 @@ const InvoiceItemList: React.FC<InvoiceItemListProps> = ({items, onDeleteItem}) 
     return(
         <div className="component_InvoiceItemList">
 
-            <h3 className="mt-3 font-medium">Seznam položek:</h3>
+            <h3 className="mt-3 font-medium pl-3">Seznam položek:</h3>
 
             {items.map((item: any, index: any) => (
 

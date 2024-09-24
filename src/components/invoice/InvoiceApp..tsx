@@ -42,12 +42,13 @@ const InvoiceApp: React.FC = () => {
         //add items to PDF
         items.forEach((item: any, index: any) => {
             const yPos = 30 + index * 10
-            pdf.text(
-                `Item: ${item.item}
-                 Quantity: ${item.quantity}
-                 Price: ${item.price}
-                `,20, yPos
-            )
+            
+            let pdf_content: string = 
+                `název: ${item.item} / `+ 
+                `množství: ${item.quantity} ks / `+
+                `cena: ${item.price} CZK `
+
+            pdf.text(pdf_content,20, yPos)
         })
 
         //add total amount to PDF
@@ -55,7 +56,7 @@ const InvoiceApp: React.FC = () => {
         totalAmount = totalAmount.toFixed(2)
         
         pdf.text(
-            `Total amount: ${totalAmount}`,20, 180
+            `Celkem: ${totalAmount} CZK`,20, 180
         )
 
         pdf.save('faktura.pdf')
@@ -68,12 +69,17 @@ const InvoiceApp: React.FC = () => {
             
             <div className="divider"></div>
 
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center m-2">
                 <div className="w-1/2">
                     <InvoiceTotalAmount total={calculateTotalAmount()}></InvoiceTotalAmount>
                 </div>
                 <div className="w-1/2 flex justify-end">
-                    <button className="btn btn-primary" onClick={handleDownloadPDF}>Stáhnout PDF</button>
+                    <button className="btn btn-primary" onClick={handleDownloadPDF}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                        </svg>
+                        Stáhnout PDF
+                    </button>
                 </div>
             </div>
             
