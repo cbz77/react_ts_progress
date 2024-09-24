@@ -1,1 +1,1 @@
-Shopping cart - React + Typescript + Tailwind CSS + DaisyUI
+React + Typescript + Tailwind CSS + DaisyUI
