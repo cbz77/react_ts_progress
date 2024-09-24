@@ -69,7 +69,7 @@ const PaintCanvas: React.FC = () => {
             <div className="card card-bordered border-2 border-yellow-400">
 
                 <PaintMenu setLineColor={setLineColor} setLineWidth={setLineWidth} setLineOpacity={setLineOpacity}></PaintMenu>
-                <canvas ref={canvasRef} onMouseUp={endDrawing} onMouseDown={startDrawing} onMouseMove={draw} width={`1280px`} height={`720`}></canvas>
+                <canvas ref={canvasRef} onMouseUp={endDrawing} onMouseDown={startDrawing} onMouseMove={draw} width={`640px`} height={`480`}></canvas>
 
             </div>
 
