@@ -6,8 +6,8 @@ interface InvoiceTotalAmountProps{
 const InvoiceTotalAmount: React.FC<InvoiceTotalAmountProps> = ({total}) => {
 
     return(
-        <div className="invoice_total">
-            <h3>Total amount: {total}</h3>
+        <div className="component_InvoiceTotalAmount">
+            <h3>Celkem: <span className="font-bold text-yellow-200">{total} Kč</span></h3>
         </div>
     )
 }

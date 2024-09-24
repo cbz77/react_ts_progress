@@ -62,14 +62,21 @@ const InvoiceApp: React.FC = () => {
     }
 
     return(
-        <div>
-
-            <h2>Faktury:</h2>
-
+        <div className="component_InvoiceApp">
             <InvoiceBillDetails onAddItem={handleAddItem}></InvoiceBillDetails>
             <InvoiceItemList items={items} onDeleteItem={handleDeleteItem}></InvoiceItemList>
-            <InvoiceTotalAmount total={calculateTotalAmount()}></InvoiceTotalAmount>
-            <button className="btn btn-primary" onClick={handleDownloadPDF}>Stáhnout PDF</button>
+            
+            <div className="divider"></div>
+
+            <div className="flex flex-row items-center">
+                <div className="w-1/2">
+                    <InvoiceTotalAmount total={calculateTotalAmount()}></InvoiceTotalAmount>
+                </div>
+                <div className="w-1/2 flex justify-end">
+                    <button className="btn btn-primary" onClick={handleDownloadPDF}>Stáhnout PDF</button>
+                </div>
+            </div>
+            
         </div>
     )
 }

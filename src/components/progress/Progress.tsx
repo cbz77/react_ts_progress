@@ -9,7 +9,7 @@ const ProgressTest: React.FC = () => {
 
     const handleChange = (e: any) => {
 
-        if(e.currentTarget.checked == true){
+        if(e.currentTarget.checked === true){
         setProgressBarVal(progressBarVal + progressPrirustek);
         }else{
         setProgressBarVal(progressBarVal - progressPrirustek);

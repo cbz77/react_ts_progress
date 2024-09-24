@@ -33,22 +33,68 @@ const InvoiceBillDetails: React.FC<InvoiceBillDetailsProps> = ({onAddItem}) => {
     }
 
     return(
-        <div>
+        <div className="component_InvoiceBillDetails">
 
-            <h3>Detail faktury:</h3>
+            <div className="card bg-neutral p-3">
 
-            <label>Item:</label>
-            <input type="text" value={item} onChange={(e:any) => setItem(e.target.value)}></input>
+                <div className="card-title"><h3>Nová položka</h3></div>
 
-            <label>Quantity:</label>
-            <input type="text" value={quantity} onChange={(e:any) => setQuantity(e.target.value)}></input>
+                <div className="card-content">
 
-            <label>Price:</label>
-            <input type="text" value={price} onChange={(e:any) => setPrice(e.target.value)}></input>
+                    <div className="flex flex-row gap-2 mt-2 mb-2">
 
-            <button className="btn btn-primary" onClick={handleAdditem}>Add item</button>
+                        <div className="form-control w-full">
 
-            <p className="text-red-400">{errorMsg}</p>
+                            <div className="label">
+                                <span className="label-text">Název:</span>
+                            </div>
+                            <input type="text" value={item} onChange={(e:any) => setItem(e.target.value)} placeholder="Název" className="input input-bordered"></input>
+
+                        </div>
+
+                        <div className="form-control w-1/5">
+
+                            <div className="label">
+                                <span className="label-text">Množství:</span>
+                            </div>
+                            <input type="number" value={quantity} onChange={(e:any) => setQuantity(e.target.value)} placeholder="Množství" className="input input-bordered"></input>
+
+                        </div>
+
+                        <div className="form-control">
+
+                            <div className="label">
+                                <span className="label-text">Cena:</span>
+                            </div>
+                            <label className="input input-bordered flex items-center gap-2">
+                                <input type="text" value={price} onChange={(e:any) => setPrice(e.target.value)} placeholder="Cena" className="grow"></input>
+                                <span className="badge">Kč</span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="card-actions flex justify-end">
+
+                    <div className="">
+                        <button className="btn btn-primary" onClick={handleAdditem}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                                Přidat položku
+                        </button>
+                    </div>
+
+                </div>
+
+                <p className="text-red-400">{errorMsg}</p>
+                {/* <div role="alert" className="alert alert-warning mt-3 mb-3">
+                    
+                </div> */}
+
+            </div>
 
         </div>
     )

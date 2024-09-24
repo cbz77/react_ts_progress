@@ -7,23 +7,20 @@ interface InvoiceItemListProps{
 const InvoiceItemList: React.FC<InvoiceItemListProps> = ({items, onDeleteItem}) => {
 
     return(
-        <div>
+        <div className="component_InvoiceItemList">
 
-            <h3>Seznam položek:</h3>
+            <h3 className="mt-3 font-medium">Seznam položek:</h3>
 
             {items.map((item: any, index: any) => (
 
-                <div className="card card-bordered border-gray-400 m-2 p-2 invoice-item" key={index}>
+                <div className="flex flex-row items-center border rounded-lg border-gray-400 m-2 p-2 invoice-item" key={index}>
 
-                    <div className="card-title">{item.item}</div>
-                    <div className="card-body">
-                        <div className="quantity">Quantity: {item.quantity}</div>
-                        <div className="price">Price: {item.price}</div>
-                    </div>
-                    <div className="card-actions">
-                        <button className="btn btn-secondary" onClick={() => {onDeleteItem(index)}}>Delete item</button>
-                    </div>
-                   
+                    <div className="index w-10 text-gray-600">{index + 1}.</div>
+                    <div className="name w-2/5 font-medium">{item.item}</div>
+                    <div className="quantity w-1/5">množství: {item.quantity}</div>
+                    <div className="price w-1/5">cena: {item.price} Kč</div>
+                    <button className="btn btn-secondary w-1/5" onClick={() => {onDeleteItem(index)}}>Smazat položku</button>
+
                 </div>
 
             ))}

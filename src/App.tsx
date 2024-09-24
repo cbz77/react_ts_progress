@@ -6,10 +6,10 @@ import ProgressTest from './components/progress/Progress';
 function App() {
 
   return (
-    <div className="container mx-auto shopping_cart_app m-5 p-5">
+    <div className="container mx-auto shopping_cart_app m-5">
       
       <header className='text-center mb-4'>
-        <h1 className='text-4xl text-bold'>Test Typescript</h1>
+        {/* <h1 className='text-4xl text-bold'>Test Typescript</h1> */}
       </header>
 
       <div className='collapse bg-base-200'>
