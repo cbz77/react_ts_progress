@@ -41,9 +41,9 @@ const InvoiceBillDetails: React.FC<InvoiceBillDetailsProps> = ({onAddItem}) => {
 
                 <div className="card-content">
 
-                    <div className="flex flex-row gap-2 mt-2 mb-2">
+                    <div className="flex flex-col md:flex-row gap-2 mt-2 mb-2">
 
-                        <div className="form-control w-full">
+                        <div className="form-control">
 
                             <div className="label">
                                 <span className="label-text">Název:</span>
@@ -52,24 +52,28 @@ const InvoiceBillDetails: React.FC<InvoiceBillDetailsProps> = ({onAddItem}) => {
 
                         </div>
 
-                        <div className="form-control w-1/5">
+                        <div className="flex flex-row gap-2">
 
-                            <div className="label">
-                                <span className="label-text">Množství:</span>
+                            <div className="form-control w-20">
+
+                                <div className="label">
+                                    <span className="label-text">Množství:</span>
+                                </div>
+                                <input type="number" value={quantity} onChange={(e:any) => setQuantity(e.target.value)} placeholder="Množství" className="input input-bordered"></input>
+
                             </div>
-                            <input type="number" value={quantity} onChange={(e:any) => setQuantity(e.target.value)} placeholder="Množství" className="input input-bordered"></input>
 
-                        </div>
+                            <div className="form-control">
 
-                        <div className="form-control">
+                                <div className="label">
+                                    <span className="label-text">Cena:</span>
+                                </div>
+                                <label className="input input-bordered flex items-center">
+                                    <input type="text" value={price} onChange={(e:any) => setPrice(e.target.value)} placeholder="Cena" className="w-full max-w-xs md:max-w-full md:flex-grow"></input>
+                                    <span className="badge">Kč</span>
+                                </label>
 
-                            <div className="label">
-                                <span className="label-text">Cena:</span>
                             </div>
-                            <label className="input input-bordered flex items-center gap-2">
-                                <input type="text" value={price} onChange={(e:any) => setPrice(e.target.value)} placeholder="Cena" className="grow"></input>
-                                <span className="badge">Kč</span>
-                            </label>
 
                         </div>
 
