@@ -52,13 +52,15 @@ const FormularApp = () => {
 
             <div className="container mx-auto max-w-md">
 
-                <form className="form-control w-full max-w-xs">
+                <form className="form-control">
 
                     <div className="flex flex-col gap-2">
                         <div>
-                            <input type="text" name="name" className="input input-bordered w-full max-w-xs" placeholder="Jméno" onChange={handleChange} required/>
+                            <input type="text" name="name" className="input input-bordered w-full" placeholder="Jméno" onChange={handleChange} required/>
                         </div> 
                     </div>
+
+                    <div className="divider"></div>
                     
                     <div className="form-control">
                         <label className="label cursor-pointer">
@@ -91,22 +93,32 @@ const FormularApp = () => {
                     </div>
 
                     <div className="form-control">
-                        <input type="range" name="range" className="range" min={0} max={500} onChange={handleChange}/>
+                        <input type="range" name="range" className="range" min={0} max={255} onChange={handleChange}/>
                     </div>
 
+                    {toggle && 
+                        <div style={{backgroundColor: 'rgb('+range+', 0, 0)'}} className="bg-red-400 w-full h-10 mt-2 rounded text-center text-yellow-200 flex justify-center items-center">R</div>
+                    }
+
+                    <div className="divider"></div>
+
+                    {nameError && 
+                        <div role="alert" className="alert alert-error mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                            </svg>
+                            {nameError}
+                            <button className="btn btn-sm btn-ghost" onClick={() => setNameError('')}>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    }
+
+                    <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+
                 </form>
-
-                {nameError && 
-                    <div role="alert" className="alert alert-error m-2">{nameError}</div>
-                }
-                <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
-
-                <div className="divider"></div>
-
-                {toggle && 
-                    <div style={{width: range + "px", height: "100px"}} className="bg-red-400"></div>
-                }
-                
 
             </div>
 
