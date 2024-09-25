@@ -15,9 +15,6 @@ const InvoiceApp: React.FC = () => {
         setItems([...items, item]);
     }
 
-    console.log("items")
-    console.log(items)
-
     const handleDeleteItem = (index: any) => {
         const updatedItems: any = [...items]
         updatedItems.splice(index, 1)
