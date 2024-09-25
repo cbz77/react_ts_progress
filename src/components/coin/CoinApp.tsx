@@ -1,5 +1,5 @@
 import Coin from "./Coin"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 const CoinApp = () => {
 
